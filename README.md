@@ -1,14 +1,6 @@
 # Leetcode
 repository for leetcode
 
-
-## Solution with Python
-Number	| Level | Title | Notes |
---- | --- | --- | --- |
-
-
-
-
 ## Python Time Complexity
 ### 1. List
 Operation	| Example	| Big-O	| Notes
