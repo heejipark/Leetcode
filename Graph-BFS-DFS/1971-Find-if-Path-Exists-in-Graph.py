@@ -33,6 +33,34 @@ class Solution:
         if source == destination:
             return True
         
+        adj = [[] for i in range(n)]
+        vis = set()
+        
+        for e1, e2 in edges:
+            adj[e1].append(e2)
+            adj[e2].append(e1)
+        
+        q = collections.deque([source])
+        
+        while q:
+            for k in adj[q.pop()]:
+                if k == destination: return True
+                if k in vis: continue
+                vis.add(k)
+                q.appendleft(k)
+        return False
+        
+# Runtime: 2129 ms, faster than 75.13% of Python3 online submissions for Find if Path Exists in Graph.
+# Memory Usage: 102 MB, less than 98.96% of Python3 online submissions for Find if Path Exists in Graph.        
+     
+
+import collections
+class Solution:
+    def validPath(self, n: int, edges: List[List[int]], source: int, destination: int) -> bool:
+        
+        if source == destination:
+            return True
+        
         # set the edges
         graph = collections.defaultdict(list)
         for e1, e2 in edges:
