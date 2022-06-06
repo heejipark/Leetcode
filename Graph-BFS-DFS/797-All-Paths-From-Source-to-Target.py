@@ -20,6 +20,36 @@ Example 2:
     Output: [[0,4],[0,3,4],[0,1,3,4],[0,1,2,3,4],[0,1,4]]
 """
 
+# BFS - 1
+# Key Point: insert 'path' into the queue and use only the last node of the current path
+import collections
+class Solution:
+    def allPathsSourceTarget(self, graph: List[List[int]]) -> List[List[int]]:
+        
+        paths = []
+        if not graph or len(graph) == 0: 
+            return paths
+        
+        q = collections.deque()
+        path = [0]
+        q.appendleft(path)
+        
+        while q:
+            current_path = q.pop()
+            node = current_path[-1]
+            for next_node in graph[node]:
+                temp_path = current_path.copy()
+                temp_path.append(next_node)
+                
+                if next_node == len(graph) - 1:
+                    paths.append(temp_path)
+                else:
+                    q.append(temp_path)
+                    
+        return paths
+                      
+        
+# DFS - 1
 # key point - after dfs(), path.pop()
 class Solution:
     def allPathsSourceTarget(self, graph: List[List[int]]) -> List[List[int]]:
@@ -44,12 +74,11 @@ class Solution:
             
         dfs(0, path)
         return paths
-        
 # Runtime: 125 ms, faster than 53.51% of Python3 online submissions for All Paths From Source to Target.
 # Memory Usage: 15.6 MB, less than 79.60% of Python3 online submissions for All Paths From Source to Target.     
             
 
-# dfs - 
+# DFS - 2
 # reference: leetcode-solution
 class Solution:
     def allPathsSourceTarget(self, graph: List[List[int]]) -> List[List[int]]:
@@ -81,5 +110,4 @@ Complexity Analysis
 
 2. Space Complexity: O(V). 
 - The recursion depth can be no more than V, and we need O(V) space to store all the previously visited vertices while recursively traversing deeper with the current path. 
-
 """

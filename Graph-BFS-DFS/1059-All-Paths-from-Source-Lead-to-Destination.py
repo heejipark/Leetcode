@@ -8,9 +8,21 @@ Problem:
     - The number of possible paths from source to destination is a finite number.
     - Return true if and only if all roads from source lead to destination.
 Constraints:
-
+    1 <= n <= 104
+    0 <= edges.length <= 104
+    edges.length == 2
+    0 <= ai, bi <= n - 1
+    0 <= source <= n - 1
+    0 <= destination <= n - 1
+    The given graph may have self-loops and parallel edges.
 Example 1:
-
+    Input: n = 4, edges = [[0,1],[0,3],[1,2],[2,1]], source = 0, destination = 3
+    Output: false
+    Explanation: We have two possibilities: to end at node 3, or to loop over node 1 and node 2 indefinitely.
 Example 2:
-
+    input: n = 4, edges = [[0,1],[0,2],[1,3],[2,3]], source = 0, destination = 3
+    Output: true
 """
+
+
+

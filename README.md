@@ -1,6 +1,14 @@
 # Leetcode
 repository for leetcode
 
+## Good Problems
+Topics	| Number	| 
+  ---     | ---     | 
+BFS&DFS	| 200, 323, 547, 695, 994, 1059 |
+Heap	| 253, 378, 1353, 1642 | 
+
+
+
 ## Python Time Complexity
 ### 1. List
 Operation	| Example	| Big-O	| Notes
