@@ -2,6 +2,8 @@
     English: https://docs.python.org/3/library/heapq.html
     Korean: https://docs.python.org/ko/3/library/heapq.html
 
+#### When we use heap?: Usually, if you need to ask the minimum and maximum values frequently, use the heap!
+
 #### Good Problems I think in LeetCode : 253, 378, 1353, 1642
 
 #### Function
